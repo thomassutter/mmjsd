@@ -45,5 +45,5 @@ python main_svhnmnist.py --dir_data=$DIR_DATA \
 			 --calc_nll \
 			 --eval_lr \
 			 --use_clf \
-			 --calc_prd
+			 --calc_prd \
 
