@@ -16,7 +16,7 @@ This code was developed and tested with:
 
 First, set up the conda enviroment as follows:
 ```bash
-conda env create -f env.yml  # create conda env
+conda env create -f environment.yml  # create conda env
 conda activate mmjsd                 # activate conda env
 ```
 
