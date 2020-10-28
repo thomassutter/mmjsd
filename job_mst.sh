@@ -6,12 +6,13 @@ METHOD="jsd"
 LIKELIHOOD_M1="laplace"
 LIKELIHOOD_M2="laplace"
 LIKELIHOOD_M3="categorical"
-BASE_DIR="/usr/scratch/projects/multimodality"
+# BASE_DIR needs to be set by the user
+BASE_DIR=""
 DIR_DATA="${BASE_DIR}/data"
-DIR_CLF="${BASE_DIR}/experiments/trained_classifiers/MNISTSVHN"
+DIR_CLF="${BASE_DIR}/trained_classifiers/trained_clfs_mst"
 DIR_EXPERIMENT_BASE="${BASE_DIR}/experiments/mmjsd"
 DIR_EXPERIMENT="${DIR_EXPERIMENT_BASE}/MNIST_SVHN_Text/${METHOD}/non_factorized/${LIKELIHOOD_M1}_${LIKELIHOOD_M2}_${LIKELIHOOD_M3}"
-PATH_INC_V3="${BASE_DIR}/experiments/inception_v3/pt_inception-2015-12-05-6726825d.pth"
+PATH_INC_V3="${BASE_DIR}/pt_inception-2015-12-05-6726825d.pth"
 DIR_FID="/tmp/MNIST_SVHN_text"
 
 source activate vae
@@ -37,8 +38,8 @@ python main_svhnmnist.py --dir_data=$DIR_DATA \
              --div_weight_uniform_content=0.25 \
 			 --batch_size=256 \
 			 --initial_learning_rate=0.0005 \
-			 --eval_freq=1 \
-			 --eval_freq_prd=1 \
+			 --eval_freq=20 \
+			 --eval_freq_prd=100 \
 			 --data_multiplications=20 \
 			 --num_hidden_layers=1 \
 			 --end_epoch=100 \

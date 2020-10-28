@@ -5,13 +5,13 @@ METHOD="jsd"
 DATASET="CelebA"
 LIKELIHOOD_M1="laplace"
 LIKELIHOOD_M2="categorical"
-BASE_DIR="/usr/scratch/projects/multimodality"
+# BASE_DIR needs to be set by the user
+BASE_DIR=""
 DIR_DATA="${BASE_DIR}/data"
-DIR_CLF="${BASE_DIR}/experiments/trained_classifiers/${DATASET}"
-DIR_TEXT="${DIR_DATA}/${DATASET}"
+DIR_CLF="${BASE_DIR}/trained_classifiers/trained_clfs_celeba"
 DIR_EXPERIMENT_BASE="${BASE_DIR}/experiments/mmjsd"
-DIR_EXPERIMENT="${DIR_EXPERIMENT_BASE}/${DATASET}/${METHOD}/factorized/${LIKELIHOOD_M1}_${LIKELIHOOD_M2}"
-PATH_INC_V3="${BASE_DIR}/experiments/inception_v3/pt_inception-2015-12-05-6726825d.pth"
+DIR_EXPERIMENT="${DIR_EXPERIMENT_BASE}/CelebA/${METHOD}/non_factorized/${LIKELIHOOD_M1}_${LIKELIHOOD_M2}"
+PATH_INC_V3="${BASE_DIR}/pt_inception-2015-12-05-6726825d.pth"
 DIR_FID="/tmp/CelebA"
 
 source activate vae
